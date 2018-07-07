@@ -1,9 +1,3 @@
-<?php
-include "session_db.php";
-?>
-<script type="text/javascript" src="scripts/md5-min.js" ></script>
-<script type="text/javascript" src="scripts/myscript.js" ></script>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +13,8 @@ include "session_db.php";
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" href="images/ISAP.gif" type="image/x-icon">
+
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link href="dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
@@ -59,7 +55,6 @@ include "session_db.php";
 
 
 
-            <?php include("sidebar.php"); ?>
 
         </section>
         <!-- /.sidebar -->
@@ -94,7 +89,6 @@ include "session_db.php";
     </div><!-- /.content-wrapper -->
 
     <footer class="main-footer">
-        <?php include "footer.php" ?>
     </footer>
 </div><!-- ./wrapper -->
 </body>
