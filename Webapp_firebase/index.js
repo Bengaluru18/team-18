@@ -11,14 +11,23 @@ var mob_no=document.getElementById("mob_no");
 var alt_no= document.getElementById("alt_no");
 var photo=document.getElementById("photo");
 var submitBtn=document.getElementById("submitBtn");
+var designation=document.getElementById("designation");
 
 function submitClick()
 {
-	var firebaseRef = firebase.database().ref("abcd");
+	var des=designation.value;
+	var firebaseRef = firebase.database().ref(des);
+
+	var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("repassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+        }
 
 	var f=first_name.value;
 	var l=last_name.value;
 	var i=intials.value;
+	var p=password.value;
 	var g=gender.value;
 	var d=dob.value;
 	var s=street.value;
@@ -38,7 +47,8 @@ function submitClick()
 		"city":c,
 		"state":st,
 		"mob_no":mob,
-		"alt_no":alt
+		"alt_no":alt,
+		"password":password
 
 	});
 
