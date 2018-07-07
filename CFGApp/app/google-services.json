@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "330815813413",
+    "firebase_url": "https://cfgapp-687e2.firebaseio.com",
+    "project_id": "cfgapp-687e2",
+    "storage_bucket": "cfgapp-687e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330815813413:android:fe6b8bff31aee067",
+        "android_client_info": {
+          "package_name": "com.example.nishant.cfgapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330815813413-1jvai4r4etian2d9q3d6mtn8q7idvl45.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nishant.cfgapp",
+            "certificate_hash": "ab766cc9a102be6d883e88d9db6684d89a963a36"
+          }
+        },
+        {
+          "client_id": "330815813413-kgkrmluaft6mp53p7jln3oa1858arfms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFwD91sJ5dl0RcYMSjNv2MkTWYVbr8VB0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330815813413-kgkrmluaft6mp53p7jln3oa1858arfms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
