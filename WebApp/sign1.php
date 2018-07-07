@@ -15,7 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/md5-min.js"></script>
     <script type="text/javascript" src="scripts/myscript.js"></script>
-    <link rel="shortcut icon" href="images/Logo.png">
+    <link rel="shortcut icon" href="images/ISAP.gif">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
@@ -249,45 +249,6 @@ if ($flag_error == 0) {
         </div>
     </form>
     <!-- Modal -->
-    <div id="tncmodal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">ISAP Terms & Condtions</h4>
-                </div>
-                <div class="modal-body">
-                    <h5>
-                        <p>Hello, this is just to ensure that our motive in developing the portal is understood by
-                            all of
-                            you. Our sole intention is to make the rental process easier to one and everyone.<br><br>
-                        <h4>Based on
-                            this we have a set of flexible terms on which this portal runs on:
-                        </h4>
-                        <br>1. Primarily as this
-                        portal will be used by ISAP registered users, we follow the rental guidelines.<br>2. The rental policies are those which are implemented year by year<br>3. As
-                        the portal is hosted on the net and as we all know there might be cases when the internet may
-                        not be upto par, or the server may be down; on all such cases the onus is on the user i.e you to
-                        inform the developers and ensure you do not miss out on an opportunity<br>4. The
-                        deadlines mentioned for registering will be followed accurately<br>5. The portal is designed to
-                        aid you in the process and will never hinder you<br>6. If you are facing any issue or bugs or
-                        technical difficulties you are required to inform the necessary people and get it solved <br>
-                        <u>7. If you liked/disliked the portal you can always reach out and give feedback.</u><br><br><br>
-                        <h4>Thats all the terms and conditions are for this.<br> Hope you have an
-                            amazing and easy rental process.<br><centre> All the best from us at ISAP</centre>
-                        </h4>
-                    </h5>
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
 </div>
 <?php //}
 //}
