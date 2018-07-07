@@ -61,6 +61,7 @@
         android:inputType="number"
         android:hint="Enter Your Email"/>
 
+
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/submit"
         android:layout_centerHorizontal="true"
@@ -69,5 +70,19 @@
         android:text="Submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <CheckBox android:id="@+id/isRegUser"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/submit"
+        android:layout_height="wrap_content"
+        android:text="Farmer"
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox android:id="@+id/isCabDriver"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/isRegUser"
+        android:layout_height="wrap_content"
+        android:text="Center"
+        android:onClick="onCheckboxClicked"/>
 
 </RelativeLayout>
