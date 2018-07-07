@@ -8,8 +8,8 @@ include "session_db.php";
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Career Portal | Dashboard</title>
-    <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
+    <title>ISAP Portal | Dashboard</title>
+    <link rel="shortcut icon" href="images/aaa.png" type="image/x-icon">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -36,7 +36,7 @@ include "session_db.php";
 <div class="wrapper">
 
     <header class="main-header">
-        <a href="#" class="logo"><b>RVCE</b>-Portal</a>
+        <a href="#" class="logo"><b>ISAP</b>-Portal</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
@@ -47,7 +47,6 @@ include "session_db.php";
                 <span class="icon-bar"></span>
             </a>
 
-            <?php include "profile_pic.php"?>
         </nav>
     </header>
 
