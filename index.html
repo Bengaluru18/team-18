@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+<head>
+<title>ISAP Administrator</title>
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+
+<script src="https://use.fontawesome.com/939e9dd52c.js"></script>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class ="mainDiv" align="right">
+    <h1 align="left"> ISAP Administrator </h1>
+    <textarea id="mainText" placeholder="Enter text.. "></textarea>
+    <button id="submitBtn"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+</div>
+    
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDLHUeXUPGbUNG790IhnbgiKq0TCWdl3ek",
+    authDomain: "isapadmin-log.firebaseapp.com",
+    databaseURL: "https://isapadmin-log.firebaseio.com",
+    projectId: "isapadmin-log",
+    storageBucket: "isapadmin-log.appspot.com",
+    messagingSenderId: "774277515532"
+  };
+  firebase.initializeApp(config);
+</script>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
