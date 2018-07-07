@@ -116,17 +116,6 @@ if ($flag_error == 0) {
                                    placeholder="Enter same password">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="agree" class="col-sm-2 control-label">Accept Terms and Conditions</label>
-                        <div class="col-sm-10">
-                            <p class="container1">
-                                <input type="checkbox" id="agree" name="agree" value="Student">Agree
-                            </p>
-                            <button type="button" class="btn btn-default" data-toggle="modal"
-                                    data-target="#tncmodal">View T&C
-                            </button>
-                        </div>
-                    </div>
                     <input name="passwordhash" id="passwordhash" type="hidden"/>
                     <?php
                     //$code = uniqid();
