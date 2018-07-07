@@ -18,7 +18,7 @@
             alert("Passwords do not match.");
             
         }else{
-        	window.open("register.php");
+        	window.open("reg.html");
         }
 	});
 }
