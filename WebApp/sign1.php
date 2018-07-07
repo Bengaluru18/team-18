@@ -23,50 +23,7 @@
 </head>
 <body>
 
-<?php
 
-if ($_SESSION['username'] != "") {
-
-    //User not logged in, redirect to login page
-    header("Location:home.php");
-
-}
-?>
-
-<?php
-include "db.php";
-//header("Location: http://www.example.com/");
-/*
-$flag_error = 0;
-$flag_refresh = 0;
-$emailid = $_POST['emailid'];
-echo $emailid;
-$password = $_POST['passwordhash'];
-$designation = $_POST['designation'];
-$degree == "BACHELOR OF ENGINEERING";
-$view = -1;
-if ($designation == 'Staff')
-    $view = 1;
-if ($designation == 'Student')
-    $view = -1;
-if ($designation == 'CPO')
-    $view = 2;
-$code = $_POST['code'];
-$sql = "delete from login where email_id = '$emailid' AND password = '$password' AND verification_code = '$code'";
-mysql_query($sql);
-if ($flag_refresh == 0) {
-
-    $sql = "INSERT INTO login(email_id, view , password, verification_code) VALUES ('$emailid', '$view', '$password', '$code')";
-    if (!mysql_query($sql)) {
-        echo "<br><Font size=3>Error: Username already taken!</font><br><BR>Try again with different email id by navigating back<br>";
-        $flag_error = 1;
-    }
-}
-
-if ($flag_error == 0) {
-    if ($view == -1) {*/
-//Commenting out for now
-?>
 <div class="container">
 <center><a href="/" class="btn btn-default">Go back to ISAP homepage</a></center>
     <br><br>
@@ -250,9 +207,7 @@ if ($flag_error == 0) {
     </form>
     <!-- Modal -->
 </div>
-<?php //}
-//}
-?>
+
 
 
 
@@ -469,12 +424,31 @@ if ($flag_error == 0) {
     });
 </script>
 
-<?php
-$ee = '<div class="form-group"><label for="exam_name" class="col-sm-2 control-label"> Examination Name : </label><div class="col-sm-10"><input type="text" id="exam_name" class="form-control" name="exam_name[]" ></div></div><div class="form-group"><label for="score" class="col-sm-2 control-label"> Score/Rank </label><div class="col-sm-10"><input class="form-control" type="text" id="score" name="score[]" ></div></div>';
-$bl1 = '<div class="form-group"><label for="sub_code" class="col-sm-2 control-label"> Subject Code </label><div class="col-sm-10"><input type="text" class="form-control" id="sub_code" name="sub_code[]" ></div></div>';
-$bl2 = '<div class="form-group"><label for="sub_name" class="col-sm-2 control-label"> Subject Name </label><div class="col-sm-10"><input type="text" class="form-control" id="sub_name" name="sub_name[]" ></div></div>';
-$bl3 = '<div class="form-group"><label for="no_attempt" class="col-sm-2 control-label"> No Of Attempts Made </label><div class="col-sm-10"><input type="text" class="form-control" id="no_attempt" name="no_attempt[]"  ></div></div>';
-$bl4 = '<div class="form-group"><label for="cleared[]" class="col-sm-2 control-label"> Cleared </label><div class="col-sm-10"><select class="form-control" name="cleared[]" >';
-$bl5 = '<option></option><option>YES</option><option>NO</option></select></div></div><div class="form-group"><label for="year" class="col-sm-2 control-label"> Year When Cleared </label><div class="col-sm-10"><input type="text" class="form-control" id="year" name="year[]" ></div></div>';
-?>
 
+<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+<script>
+ // Initialize Firebase
+ // TODO: Replace with your project's customized code snippet
+ var config = {
+ apiKey: "<API_KEY>",
+ authDomain: "<PROJECT_ID>.http://firebaseapp.com",
+ databaseURL: "https://<DATABASE_NAME>.http://firebaseio.com",
+ storageBucket: "<BUCKET>.Google Cloud Platform",
+ messagingSenderId: "<SENDER_ID>",
+ };
+ firebase.initializeApp(config);
+ 
+ // Get a reference to the database service
+ var database = firebase.database();
+ 
+ // update the variable when the starCount is changed in the database
+ var starCountRef = database.ref('posts/' + postId + '/starCount');
+ starCountRef.on('value', function(snapshot) {
+ updateStarCount(postElement, snapshot.val());
+ });
+ 
+ // update the UI
+ function updateStarCount(el, val) {
+ el.innerHtml(`${val} Stars!`);
+ }
+</script>
