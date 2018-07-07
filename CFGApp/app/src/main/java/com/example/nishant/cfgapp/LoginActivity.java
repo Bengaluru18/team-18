@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void updateUI(FirebaseUser user) {
         if (user!=null){
-            Intent i = new Intent(LoginActivity.this, OptionsActivity.class);
+            Intent i = new Intent(LoginActivity.this, ProfileActivity.class);
 
             GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(this);
             if (googleSignInAccount != null) {
