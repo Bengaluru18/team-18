@@ -3,22 +3,32 @@ package com.example.nishant.cfgapp;
 public class PersonalDetailsFarmer {
     private String Name;
     private String address;
-    private int aadhar;
-    private int mobile;
+    private String aadhar;
+    private String mobile;
     private String email;
     private boolean isFarmer;
+    private String survey_no;
 
     PersonalDetailsFarmer(){
 
     }
 
-    public PersonalDetailsFarmer(String name, String address, int aadhar, int mobile, String email, boolean isFarmer) {
+    public PersonalDetailsFarmer(String name, String address, String aadhar, String mobile, String email, boolean isFarmer, String survey_no) {
         Name = name;
         this.address = address;
         this.aadhar = aadhar;
         this.mobile = mobile;
         this.email = email;
         this.isFarmer = isFarmer;
+        this.survey_no = survey_no;
+    }
+
+    public String getSurvey_no() {
+        return survey_no;
+    }
+
+    public void setSurvey_no(String survey_no) {
+        this.survey_no = survey_no;
     }
 
     public String getName() {
@@ -37,19 +47,19 @@ public class PersonalDetailsFarmer {
         this.address = address;
     }
 
-    public int getAadhar() {
+    public String getAadhar() {
         return aadhar;
     }
 
-    public void setAadhar(int aadhar) {
+    public void setAadhar(String aadhar) {
         this.aadhar = aadhar;
     }
 
-    public int getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
-    public void setMobile(int mobile) {
+    public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 

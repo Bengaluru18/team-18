@@ -67,7 +67,7 @@
         android:elevation="50dp"
         android:layout_below="@+id/line2"
         android:layout_height="wrap_content"
-        android:text="Book Emergency Cab"
+        android:text="Book Now"
         android:textColor="#000"
         app:backgroundTint="#F0F0F0"/>
 
@@ -79,6 +79,17 @@
         android:layout_below="@+id/button_bookcab"
         android:layout_height="wrap_content"
         android:text="See Your Request"
+        android:textColor="#000"
+        app:backgroundTint="#F0F0F0"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/button_see_profile"
+        android:layout_width="250dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="50dp"
+        android:layout_below="@+id/button_see_req"
+        android:layout_height="wrap_content"
+        android:text="See Your Profile and Update"
         android:textColor="#000"
         app:backgroundTint="#F0F0F0"/>
 

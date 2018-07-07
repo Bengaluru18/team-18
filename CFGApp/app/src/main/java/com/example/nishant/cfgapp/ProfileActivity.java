@@ -17,7 +17,7 @@ import com.google.firebase.database.ServerValue;
 public class ProfileActivity extends AppCompatActivity {
 
     private String name1, address1, email1;
-    private int aadhar1, phoneno1;
+    private String aadhar1, phoneno1, survey_no;
     private boolean isFarmer = false;
     private boolean isCenter = false;
     private DatabaseReference mFirebaseDatabase;
@@ -35,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
         final EditText aadhar = findViewById(R.id.aadhar);
         final EditText phoneno = findViewById(R.id.mobile);
         EditText email = findViewById(R.id.email);
+        final EditText survey_no = findViewById(R.id.survey_no);
 
         CheckBox checkBox = findViewById(R.id.isRegUser);
 
@@ -47,11 +48,13 @@ public class ProfileActivity extends AppCompatActivity {
         email.setText(sharedPreferences.getString("personEmail",""));
         email1 = sharedPreferences.getString("personEmail","");
         address.setText(sharedPreferences.getString("address",""));
-        address1 = sharedPreferences.getString("address","");
+        survey_no.setText(sharedPreferences.getString("survey_no",""));
+
+
         aadhar.setText(sharedPreferences.getString("aadhar",""));
-        aadhar1 = Integer.parseInt(sharedPreferences.getString("aadhar",""));
+
         phoneno.setText(sharedPreferences.getString("phoneno",""));
-        phoneno1 = Integer.parseInt(sharedPreferences.getString("phoneno",""));
+
 
         mFirebaseInstance = FirebaseDatabase.getInstance();
         //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
@@ -62,20 +65,25 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-
+                address1 = address.getText().toString();
+                String survey_no1 = survey_no.getText().toString();
                 editor.putString("address",address.getText().toString());
                 editor.putString("aadhar", aadhar.getText().toString());
                 editor.putString("phoneno", phoneno.getText().toString());
+                editor.putString("survey_no", survey_no1);
                 editor.putBoolean("isFarmer", isFarmer);
 
                 editor.apply();
 
+                aadhar1 = sharedPreferences.getString("aadhar","");
+                phoneno1 = sharedPreferences.getString("phoneno","");
+
                 String UserID = mFirebaseDatabase.push().getKey();
 
                 PersonalDetailsFarmer request;
-                request = new PersonalDetailsFarmer(name1, address1, aadhar1, phoneno1, email1, true);
+                request = new PersonalDetailsFarmer(name1, address1, aadhar1, phoneno1, email1, true, survey_no1);
 
-                mFirebaseDatabase.child(UserID).setValue(request);
+                mFirebaseDatabase.child(phoneno1).setValue(request);
 
             }
         });
