@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2018 at 10:54 AM
+-- Generation Time: Jul 07, 2018 at 12:53 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -31,8 +31,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `login` (
   `LID` varchar(10) NOT NULL,
   `e_mailID` varchar(30) NOT NULL,
-  `Password` varchar(20) NOT NULL
+  `Password` varchar(20) NOT NULL,
+  `Approval` tinyint(1) NOT NULL,
+  `VID` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD UNIQUE KEY `VID` (`VID`),
+  ADD UNIQUE KEY `e_mailID` (`e_mailID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
