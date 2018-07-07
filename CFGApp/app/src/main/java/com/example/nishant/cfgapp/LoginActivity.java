@@ -4,6 +4,7 @@ import android.app.ActivityOptions;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -113,7 +114,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void updateUI(FirebaseUser user) {
         if (user!=null){
-            Intent i = new Intent(LoginActivity.this, ProfileActivity.class);
+            Intent i = new Intent(LoginActivity.this, OptionsActivity.class);
 
             GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(this);
             if (googleSignInAccount != null) {
