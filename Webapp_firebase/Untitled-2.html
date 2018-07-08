@@ -1,0 +1,78 @@
+<html><script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <!-- Firebase App is always required and must be first -->
+<!--    <script src="/__/firebase/5.1.0/firebase-app.js"></script>-->
+
+    <!-- Add additional services that you want to use -->
+<!--    <script src="/__/firebase/5.1.0/firebase-auth.js"></script>
+    <script src="/__/firebase/5.1.0/firebase-database.js"></script>
+    <script src="/__/firebase/5.1.0/firebase-messaging.js"></script>
+    <script src="/__/firebase/5.1.0/firebase-functions.js"></script>-->
+
+    <!-- Comment out (or don't include) services that you don't want to use -->
+    <!-- <script src="/__/firebase/5.1.0/firebase-storage.js"></script> -->
+
+<!--    <script src="/__/firebase/init.js"></script>-->
+<!Doctype html>
+<html>
+<head>
+<title> Firebase web Basics </title>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700">
+<script src="https://use.fontawesome.com/939e9dd52c.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="mainDiv" align="left">
+    <h1>All Users</h1>
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Email</td>
+          <td>Actions</td>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+        
+      </tbody>
+    </table>
+  </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script type="application/javascript">
+  // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
+  // var ref = new Firebase("https://cfgapp-687e2.firebaseio.com");
+
+var config = {
+    apiKey: "AIzaSyDGSOt_catoKlV9y8MDj2bnrp1MXNSO34w",
+    authDomain: "cfgapp-687e2.firebaseapp.com",
+    databaseURL: "https://cfgapp-687e2.firebaseio.com",
+    projectId: "cfgapp-687e2",
+    storageBucket: "cfgapp-687e2.appspot.com",
+    messagingSenderId: "330815813413"
+  };
+firebase.initializeApp(config);
+
+var rootRef = firebase.database().ref("State");
+rootRef.on('value', function(State){
+  State.forEach(function(childState){
+    // var childData = childState.val();
+    $("#table_body").append("<tr><td>" + JSON.stringify(childState) "</td></tr>");
+  });
+});
+
+
+</script>
+<!-- var oneRef = rootRef.child('KA').child('Bengaluru').val();
+
+var twoRef = rootRef.child('State').child('KA').child('Doranhalli');
+
+var threeRef = rootRef.child('State').child('KA').child('Gundagurthi');
+
+var fourRef = rootRef.child('State').child('KA').child('Hubli');
+ console.log(rootRef);
+ console.log(oneRef);
+ console.log(twoRef); -->
+    
+</html>
