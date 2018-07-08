@@ -2,17 +2,20 @@ package com.example.nishant.cfgapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
+import com.squareup.picasso.Picasso;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -37,18 +40,18 @@ public class ProfileActivity extends AppCompatActivity {
         EditText email = findViewById(R.id.email);
         final EditText survey_no = findViewById(R.id.survey_no);
 
-        CheckBox checkBox = findViewById(R.id.isRegUser);
-
-        if(isFarmer){
-            checkBox.setChecked(true);
-        }
-
         name.setText(sharedPreferences.getString("personName",""));
         name1 = sharedPreferences.getString("personName","");
         email.setText(sharedPreferences.getString("personEmail",""));
         email1 = sharedPreferences.getString("personEmail","");
         address.setText(sharedPreferences.getString("address",""));
         survey_no.setText(sharedPreferences.getString("survey_no",""));
+
+        Uri image = Uri.parse(sharedPreferences.getString("personPhoto",""));
+
+        ImageView imageView = findViewById(R.id.profilePic);
+
+        Picasso.with(this).load(image).into(imageView);
 
 
         aadhar.setText(sharedPreferences.getString("aadhar",""));
@@ -88,20 +91,5 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void onCheckboxClicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-
-        // Check which checkbox was clicked
-        switch(view.getId()) {
-            case R.id.isRegUser:  Toast.makeText(this, "I'm a farmer", Toast.LENGTH_SHORT).show();
-                isFarmer = true;
-                break;
-            case R.id.isCabDriver:  Toast.makeText(this, "Customer Care Center", Toast.LENGTH_SHORT).show();
-                isCenter = true;
-                break;
-        }
     }
 }
