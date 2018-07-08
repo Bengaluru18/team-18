@@ -33,8 +33,13 @@ public class OrderActivity extends AppCompatActivity implements Serializable {
 
 
         final FirebaseDatabase firedatabase1 = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference1 = firedatabase.getReference("BookingID");
+        DatabaseReference databaseReference1 = firedatabase.getReference("Bookings").push();
 
+        Booking request = new Booking(inventory.getState(), inventory.getCentername(), inventory.getEquip_no(),
+                inventory.getPrice(), inventory.getType(), true, sharedPreferences.getString("personName",""),
+                sharedPreferences.getString("phoneno",""));
+
+        databaseReference1.child("").setValue(request);
 
 
     }
