@@ -23,5 +23,7 @@ function submitClick()
 		"PricePerDay":p,
 
 	});
+	window.alert("Inventory Details have been saved");
+	window.open('reg.html');
 
 }
