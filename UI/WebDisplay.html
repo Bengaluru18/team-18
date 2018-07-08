@@ -1,0 +1,103 @@
+<html>
+    <head>Test</head>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <!-- Firebase App is always required and must be first -->
+<!--    <script src="/__/firebase/5.1.0/firebase-app.js"></script>-->
+
+    <!-- Add additional services that you want to use -->
+<!--    <script src="/__/firebase/5.1.0/firebase-auth.js"></script>
+    <script src="/__/firebase/5.1.0/firebase-database.js"></script>
+    <script src="/__/firebase/5.1.0/firebase-messaging.js"></script>
+    <script src="/__/firebase/5.1.0/firebase-functions.js"></script>-->
+
+    <!-- Comment out (or don't include) services that you don't want to use -->
+    <!-- <script src="/__/firebase/5.1.0/firebase-storage.js"></script> -->
+
+<!--    <script src="/__/firebase/init.js"></script>-->
+
+    <script type="application/javascript">
+  // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
+  // var ref = new Firebase("https://cfgapp-687e2.firebaseio.com");
+var newDiv = document.getElementsByTagName('div');
+        
+var config = {
+    apiKey: "AIzaSyDGSOt_catoKlV9y8MDj2bnrp1MXNSO34w",
+    authDomain: "cfgapp-687e2.firebaseapp.com",
+    databaseURL: "https://cfgapp-687e2.firebaseio.com",
+    projectId: "cfgapp-687e2",
+    storageBucket: "cfgapp-687e2.appspot.com",
+    messagingSenderId: "330815813413"
+  };
+firebase.initializeApp(config);
+
+var array = [];
+var rootRef = firebase.database().ref("State");
+rootRef.on('value', function(State){
+  State.forEach(function(childState){
+    //  $("#table_body").append("<tr><td>" + childState.key + "</td>");
+      console.log("State "+childState.key)
+    var childData = childState.val();
+   //  console.log("parsing"+childData['Bengaluru']['KA012']['PricePerDay']);
+       //nsole.log("parsing"+childData['Bengaluru'][0][0]);
+     array.push(childData); 
+    /*alert(JSON.stringify(childData));*/
+      childState.forEach(function(grandChild){
+ //         $("#table_body").append("<td>"+grandChild.key+"</td>");
+          console.log("City "+grandChild.key)
+         /* alert(JSON.stringify(grandChild.val()));*/
+          grandChild.forEach(function(greatGrandChild){
+              console.log("ID "+greatGrandChild.key);
+              $("#table_body").append("<tr>");
+              $("#table_body").append("<td>"+childState.key+"</td><td>"+grandChild.key+"</td>");
+              
+               $("#table_body").append("<td>"+greatGrandChild.key+"</td>");
+              $("#table_body").append("<td>"+greatGrandChild.val()['PricePerDay']+"</td><td>"+greatGrandChild.val()['isallocated']+"</td><td>"+greatGrandChild.val()['Type']+"</td></tr>");
+          console.log("PricePerDay "+greatGrandChild.val()['PricePerDay']+" isallocated "+greatGrandChild.val()['isallocated']+" Type "+greatGrandChild.val()['Type']+" meh "+grandChild.key+childState.key);
+      })
+      })
+    //  $("#table_body").append("</tr>");
+  });
+ 
+});
+
+console.log(array);
+        
+</script>
+<!-- var oneRef = rootRef.child('KA').child('Bengaluru').val();
+
+var twoRef = rootRef.child('State').child('KA').child('Doranhalli');
+
+var threeRef = rootRef.child('State').child('KA').child('Gundagurthi');
+
+var fourRef = rootRef.child('State').child('KA').child('Hubli');
+ console.log(rootRef);
+ console.log(oneRef);
+ console.log(twoRef); -->
+   <body>
+    <div class="mainDiv" align="left">
+    <h1>All Users</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>City</th>
+          <th>ID</th>
+            <th>PricePerDay</th>
+            <th>isallocated</th>
+            <th>Type</th>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+        
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+  <div class="box-footer clearfix">
+			<a href="reg.html" class="btn btn-sm btn-info btn-flat pull-left">Go Back</a>
+			</div>
+    </body>
+</html>
