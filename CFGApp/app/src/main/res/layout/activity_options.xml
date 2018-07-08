@@ -60,12 +60,30 @@
         android:layout_height="2dp"
         android:background="#c0c0c0"/>
 
+    <TextView
+        android:id="@+id/txtAddress"
+        android:layout_below="@+id/line2"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_marginStart="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/line3"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/txtAddress"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
+
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/button_bookcab"
         android:layout_width="250dp"
         android:layout_centerHorizontal="true"
         android:elevation="50dp"
-        android:layout_below="@+id/line2"
+        android:layout_below="@+id/line3"
         android:layout_height="wrap_content"
         android:text="Book Now"
         android:textColor="#000"
