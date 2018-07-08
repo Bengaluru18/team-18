@@ -15,7 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/md5-min.js"></script>
     <script type="text/javascript" src="scripts/myscript.js"></script>
-    <link rel="shortcut icon" href="images/Logo.png">
+    <link rel="shortcut icon" href="images/ISAP.gif">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
@@ -23,50 +23,7 @@
 </head>
 <body>
 
-<?php
 
-if ($_SESSION['username'] != "") {
-
-    //User not logged in, redirect to login page
-    header("Location:home.php");
-
-}
-?>
-
-<?php
-include "db.php";
-//header("Location: http://www.example.com/");
-/*
-$flag_error = 0;
-$flag_refresh = 0;
-$emailid = $_POST['emailid'];
-echo $emailid;
-$password = $_POST['passwordhash'];
-$designation = $_POST['designation'];
-$degree == "BACHELOR OF ENGINEERING";
-$view = -1;
-if ($designation == 'Staff')
-    $view = 1;
-if ($designation == 'Student')
-    $view = -1;
-if ($designation == 'CPO')
-    $view = 2;
-$code = $_POST['code'];
-$sql = "delete from login where email_id = '$emailid' AND password = '$password' AND verification_code = '$code'";
-mysql_query($sql);
-if ($flag_refresh == 0) {
-
-    $sql = "INSERT INTO login(email_id, view , password, verification_code) VALUES ('$emailid', '$view', '$password', '$code')";
-    if (!mysql_query($sql)) {
-        echo "<br><Font size=3>Error: Username already taken!</font><br><BR>Try again with different email id by navigating back<br>";
-        $flag_error = 1;
-    }
-}
-
-if ($flag_error == 0) {
-    if ($view == -1) {*/
-//Commenting out for now
-?>
 <div class="container">
 <center><a href="/" class="btn btn-default">Go back to ISAP homepage</a></center>
     <br><br>
@@ -249,49 +206,8 @@ if ($flag_error == 0) {
         </div>
     </form>
     <!-- Modal -->
-    <div id="tncmodal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">ISAP Terms & Condtions</h4>
-                </div>
-                <div class="modal-body">
-                    <h5>
-                        <p>Hello, this is just to ensure that our motive in developing the portal is understood by
-                            all of
-                            you. Our sole intention is to make the rental process easier to one and everyone.<br><br>
-                        <h4>Based on
-                            this we have a set of flexible terms on which this portal runs on:
-                        </h4>
-                        <br>1. Primarily as this
-                        portal will be used by ISAP registered users, we follow the rental guidelines.<br>2. The rental policies are those which are implemented year by year<br>3. As
-                        the portal is hosted on the net and as we all know there might be cases when the internet may
-                        not be upto par, or the server may be down; on all such cases the onus is on the user i.e you to
-                        inform the developers and ensure you do not miss out on an opportunity<br>4. The
-                        deadlines mentioned for registering will be followed accurately<br>5. The portal is designed to
-                        aid you in the process and will never hinder you<br>6. If you are facing any issue or bugs or
-                        technical difficulties you are required to inform the necessary people and get it solved <br>
-                        <u>7. If you liked/disliked the portal you can always reach out and give feedback.</u><br><br><br>
-                        <h4>Thats all the terms and conditions are for this.<br> Hope you have an
-                            amazing and easy rental process.<br><centre> All the best from us at ISAP</centre>
-                        </h4>
-                    </h5>
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
 </div>
-<?php //}
-//}
-?>
+
 
 
 
@@ -508,12 +424,31 @@ if ($flag_error == 0) {
     });
 </script>
 
-<?php
-$ee = '<div class="form-group"><label for="exam_name" class="col-sm-2 control-label"> Examination Name : </label><div class="col-sm-10"><input type="text" id="exam_name" class="form-control" name="exam_name[]" ></div></div><div class="form-group"><label for="score" class="col-sm-2 control-label"> Score/Rank </label><div class="col-sm-10"><input class="form-control" type="text" id="score" name="score[]" ></div></div>';
-$bl1 = '<div class="form-group"><label for="sub_code" class="col-sm-2 control-label"> Subject Code </label><div class="col-sm-10"><input type="text" class="form-control" id="sub_code" name="sub_code[]" ></div></div>';
-$bl2 = '<div class="form-group"><label for="sub_name" class="col-sm-2 control-label"> Subject Name </label><div class="col-sm-10"><input type="text" class="form-control" id="sub_name" name="sub_name[]" ></div></div>';
-$bl3 = '<div class="form-group"><label for="no_attempt" class="col-sm-2 control-label"> No Of Attempts Made </label><div class="col-sm-10"><input type="text" class="form-control" id="no_attempt" name="no_attempt[]"  ></div></div>';
-$bl4 = '<div class="form-group"><label for="cleared[]" class="col-sm-2 control-label"> Cleared </label><div class="col-sm-10"><select class="form-control" name="cleared[]" >';
-$bl5 = '<option></option><option>YES</option><option>NO</option></select></div></div><div class="form-group"><label for="year" class="col-sm-2 control-label"> Year When Cleared </label><div class="col-sm-10"><input type="text" class="form-control" id="year" name="year[]" ></div></div>';
-?>
 
+<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+<script>
+ // Initialize Firebase
+ // TODO: Replace with your project's customized code snippet
+ var config = {
+ apiKey: "<API_KEY>",
+ authDomain: "<PROJECT_ID>.http://firebaseapp.com",
+ databaseURL: "https://<DATABASE_NAME>.http://firebaseio.com",
+ storageBucket: "<BUCKET>.Google Cloud Platform",
+ messagingSenderId: "<SENDER_ID>",
+ };
+ firebase.initializeApp(config);
+ 
+ // Get a reference to the database service
+ var database = firebase.database();
+ 
+ // update the variable when the starCount is changed in the database
+ var starCountRef = database.ref('posts/' + postId + '/starCount');
+ starCountRef.on('value', function(snapshot) {
+ updateStarCount(postElement, snapshot.val());
+ });
+ 
+ // update the UI
+ function updateStarCount(el, val) {
+ el.innerHtml(`${val} Stars!`);
+ }
+</script>

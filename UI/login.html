@@ -1,0 +1,62 @@
+<!Doctype html>
+<html>
+<head>
+<title> Firebase web Basics </title>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700">
+<script src="https://use.fontawesome.com/939e9dd52c.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="mainDiv" align="left">
+		<h1 align="left"> Admin Sign In</h1>
+		<!-- signin-->
+
+        <h4>Please Enter the Login Credentials</h4>
+                    <div class="form-group">
+                        <label for="emailid" class="col-sm-2 control-label">Email ID</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="emailid" name="emailid" class="form-control"
+                                   placeholder="Enter a valid email ID">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="password" name="password" class="form-control"
+                                   placeholder="Password must be more than 6 characters">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="repassword" class="col-sm-2 control-label">Phone Number</label>
+                        <div class="col-sm-10">
+                            <input type="phone" id="phone" name="phone" class="form-control"
+                                   placeholder="Enter the registered phone Number">
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="designation" class="col-sm-2 control-label">Designation</label>
+                        <div class="col-sm-10">
+                            <input type="designation" id="designation" name="designation" class="form-control"
+                                   placeholder="Enter sh for state head ch for centre head">
+                        </div>
+                    </div>
+        <button id="submitBtn" onclick="return Validate()"><i class="fa fa-arrow-right" aria_hidden="true">Submit</i></button>
+	</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDGSOt_catoKlV9y8MDj2bnrp1MXNSO34w",
+    authDomain: "cfgapp-687e2.firebaseapp.com",
+    databaseURL: "https://cfgapp-687e2.firebaseio.com",
+    projectId: "cfgapp-687e2",
+    storageBucket: "cfgapp-687e2.appspot.com",
+    messagingSenderId: "330815813413"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="login.js"></script>
+</body>
+</html>

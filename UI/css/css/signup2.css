@@ -1,0 +1,126 @@
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width:auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.signupbtn2 {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {float:left;width:50%}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+#id01,#id02 {
+    opacity: 1 !important;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(128,128,128,0.5); /* Fallback color */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.signup {
+    
+    /*background-color: #fefefe;*/
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    opacity: 1 !important ;
+}
+
+.login
+{
+
+    /*background-color: #fefefe;*/
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
+    height: 40%;
+    opacity: 1 !important ;
+
+}
+
+#hlogin,#hsignup
+{
+    text-align: center;
+}
+
+#signup2
+{
+    background-color:white;
+}
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 55px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+@media screen and (min-width: 760px){
+    .container{
+        max-width:100%;
+    }
+}
+
+@media screen and (min-width: 550px){
+    .signup,.login{
+        width:500px;
+    }
+}
+
+@media screen and (max-width: 650px)
+{
+    .close
+    {
+        top:15px;
+    }
+}

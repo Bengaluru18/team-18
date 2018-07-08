@@ -1,0 +1,153 @@
+<!Doctype html>
+<html>
+<head>
+<title> Firebase web Basics </title>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700">
+<script src="https://use.fontawesome.com/939e9dd52c.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="mainDiv" align="left">
+		<h1 align="left"> Admin Sign Up</h1>
+		<!-- signup-->
+
+
+
+
+		<div class="form-group">
+                        <label for="first_name" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="first_name" name="first_name" class="form-control"
+                                   placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name" class="col-sm-2 control-label">Middle Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="last_name" name="last_name" class="form-control"
+                                   placeholder="Middle Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="intials" class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="intials" name="initials" class="form-control"
+                                   placeholder="Last Name">
+                        </div>
+                    </div>
+                    <!--checking password<-->
+
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="password" name="password" class="form-control"
+                                   placeholder="Password must be more than 6 characters">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="repassword" class="col-sm-2 control-label">Re-Type Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="repassword" name="repassword" class="form-control"
+                                   placeholder="Enter same password">
+                        </div>
+                    </div>
+                    
+                     <div class="form-group">
+                        <label for="designation" class="col-sm-2 control-label">Designation</label>
+                        <div class="col-sm-10">
+                            <input type="designation" id="designation" name="designation" class="form-control"
+                                   placeholder="Enter sh for state head ch for centre head">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender" class="col-sm-2 control-label">Gender</label>
+                        <div class="col-sm-10">
+                            <p class="container1">
+                                <input type="radio" id="gender" name="gender" id="name" value="Male">&nbsp;Male&nbsp;
+                                <input type="radio" id="gender" name="gender" id="name" value="Female">&nbsp;Female&nbsp;
+                                <input type="radio" id="gender" name="gender" id="name" value="Other">&nbsp;Other&nbsp;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob" class="col-sm-2 control-label">Date of Birth</label>
+                        <div class="col-sm-10">
+                            <input type="date" id="dob" name="dob" class="form-control" min="1980-12-31"
+                                   max="today">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="street" class="col-sm-2 control-label">Address(House No., Street)</label>
+                        <div class="col-sm-10">
+                                <textarea id="street" name="street" class="form-control"
+                                          placeholder="Address"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city" class="col-sm-2 control-label">City</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="city" name="city" class="form-control" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="state" class="col-sm-2 control-label">State</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="state" name="state" class="form-control" placeholder="State">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pincode" class="col-sm-2 control-label">PinCode</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="pincode" name="pincode" class="form-control"
+                                   placeholder="PinCode">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mob_no" class="col-sm-2 control-label">Mobile Number</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="mob_no" name="mob_no" class="form-control"
+                                   placeholder="Mobile Number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="alt_no" class="col-sm-2 control-label">Alternate Mobile Number</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="alt_no" name="alt_no" class="form-control"
+                                   placeholder="Alternate Mobile Number">
+                        </div>
+                    </div>
+                     <div class="box row-fluid">
+                        <br>
+                        <div class="step">
+                            <h4>Please Upload your picture</h4>
+                            <div class="form-group">
+                                <label for="photo" class="col-sm-2 control-label">Upload picture</label>
+                                <div class="col-sm-10">
+                                    <input type="file" id="photo" name="photo" class="form-control"
+                                           accept=".jpg">
+                                    <br/>(only .jpg format can be uploaded)<br/>
+                                </div>
+                            </div>
+
+
+
+		<button id="submitBtn" onclick="submitClick()"><i class="fa fa-arrow-right" aria_hidden="true"></i></button>
+	</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDGSOt_catoKlV9y8MDj2bnrp1MXNSO34w",
+    authDomain: "cfgapp-687e2.firebaseapp.com",
+    databaseURL: "https://cfgapp-687e2.firebaseio.com",
+    projectId: "cfgapp-687e2",
+    storageBucket: "cfgapp-687e2.appspot.com",
+    messagingSenderId: "330815813413"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+//firebase.database().ref()
+var ref = new Firebase("https://cfgapp-687e2.firebaseio.com");
+
+var config = {
+    apiKey: "AlzaSyDGSOt_catoKIV9y8MDj2bnrp1MXNSO34w",
+    authDomain: "cfgapp-687e2.firebaseapp.com",
+    databaseURL: "https://cfgapp-687e2.firebaseio.com"
+};
+
+firebase.initializeapp(config);
+
+var rootRef = firebasedatabase().ref();
+
+var oneRef = rootRef.child('State').child('KA').child('Bengaluru');
+
+var twoRef = rootRef.child('State').child('KA').child('Doranhalli');
+
+var threeRef = rootRef.child('State').child('KA').child('Gundagurthi');
+
+var fourRef = rootRef.child('State').child('KA').child('Hubli');

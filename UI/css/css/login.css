@@ -1,0 +1,102 @@
+  /*Devices between 480 and 768*/
+  body, html{
+      margin:0;
+      height: 100%;
+      background-image:url("Images/bg7.jpg");
+      background-size:100% 100%;
+      background-repeat:no-repeat;
+      
+    }
+
+    .fill-height {
+    min-height: 100%;
+    height:auto !important; /* cross-browser */
+    height: 100%; /* cross-browser */
+}
+
+  h2
+  {
+    text-align:center;
+    font-family:courier;
+    color:white;
+  }
+
+  #login
+    {
+      margin-top:10%;
+      margin-left: 15%;
+      width: 70%;
+      border: 1px solid #ccc;
+      background-color:rgba(180, 203, 203, 0.3);
+      border-radius: 15px;
+    }
+    .fx{
+    margin:5%;
+    }
+
+
+  /*Devices below 480px*/
+  @media screen and (max-width:480px){
+    body,html
+  {
+    margin:0;
+    height: 100%;
+    background-image:url("Images/bg7.jpg");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+  }
+
+   .fill-height {
+    min-height: 100%;
+    height:auto !important; /* cross-browser */
+    height: 100%; /* cross-browser */
+}
+
+  #login{ 
+    width: 80%;
+    margin-left: 10%;
+    border: 1px solid #ccc;
+    background-color: rgba(180, 203, 203, 0.3);
+    border-radius: 15px;
+    padding-bottom: 2%;
+  }
+
+  .fx{
+    margin: 5%;
+  }
+
+  }
+
+
+  /*Devices above 960px*/
+  @media screen and (min-width: 768px){
+    body,html
+    {
+      background-image:url("Images/bg7.jpg");
+      height: 100%;
+      background-size:100% 100%;
+      background-repeat:no-repeat;
+      margin:0;
+    }
+
+    .fill-height {
+    min-height: 100%;
+    height:auto !important; /* cross-browser */
+    height: 100%; /* cross-browser */
+}
+
+
+    #login{
+      position: center;
+      width: 60%;
+      margin-left: 20%;
+      border: 1px solid #ccc;
+      background-color: rgba(180, 203, 203, 0.3);
+      border-radius: 15px;
+      padding-bottom: 2%;
+    }
+
+    .fx{
+      margin:5%;
+    }
+  }
