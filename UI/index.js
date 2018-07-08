@@ -51,5 +51,7 @@ function submitClick()
 		"password":password
 
 	});
+	window.alert("Successfully Signed Up");
+	window.open("front.html");
 
 }
