@@ -113,6 +113,14 @@ public class OptionsActivity extends AppCompatActivity {
                 startActivity(new Intent(v.getContext(), SeeInventoryActivity.class));
             }
         });
+
+        Button button_see_req = findViewById(R.id.button_see_req);
+        button_see_req.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), YourRequests.class));
+            }
+        });
     }
 
     public void onPause(){
