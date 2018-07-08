@@ -79,16 +79,6 @@ public class ResultsAdapterBooking extends RecyclerView.Adapter<ResultsAdapterBo
 // notificationId is a unique int for each notification that you must define
                     notificationManager.notify(0, mBuilder.build());
 
-//                    if(request.isAllocated()){
-//                        Toast.makeText(v.getContext(), "Sorry, The Item is already Booked!", Toast.LENGTH_LONG).show();
-//                        floatingActionButton.setVisibility(View.GONE);
-//                    } else {
-//                        Intent intent = new Intent(v.getContext(), OrderActivity.class);
-//
-//                        Serializable s = (Serializable) request;
-//                        intent.putExtra("requestObj",s);
-//                        v.getContext().startActivity(intent);
-//                    }
                 }
             });
 
