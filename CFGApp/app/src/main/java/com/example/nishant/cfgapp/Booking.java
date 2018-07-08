@@ -1,6 +1,10 @@
 package com.example.nishant.cfgapp;
 
+import com.google.firebase.database.Exclude;
+
 import org.w3c.dom.NameList;
+
+import java.sql.Time;
 
 public class Booking {
     private String state;
@@ -9,11 +13,11 @@ public class Booking {
     private int price;
     private String type;
     private Boolean isAllocated;
-
+    public Object TimeValue;
     private String name;
     private String mobile;
 
-    public Booking(String state, String city, String equipment_id, int price, String type, Boolean isAllocated, String name,String mobile) {
+    public Booking(String state, String city, String equipment_id, int price, String type, Boolean isAllocated, String name,String mobile, Object TimeValue) {
         this.state = state;
         this.city = city;
         this.equipment_id = equipment_id;
@@ -22,6 +26,12 @@ public class Booking {
         this.isAllocated = isAllocated;
         this.name = name;
         this.mobile = mobile;
+        this.TimeValue = TimeValue;
+    }
+
+    @Exclude
+    public Long getTimeValue() {
+        return (long)TimeValue;
     }
 
     public Booking() {
