@@ -46,26 +46,30 @@ public class SeeInventoryActivity extends AppCompatActivity {
                 Iterable<DataSnapshot> iterable = dataSnapshot.getChildren();
                 for(DataSnapshot dataSnapshot1: iterable){
                     if(dataSnapshot1.getKey().equals("KA")){
-                        String state = "Karnataka";
+                        String state = "KA";
                         //Toast.makeText(getApplicationContext(), dataSnapshot1.getValue().toString(), Toast.LENGTH_LONG).show();
                         DataSnapshot d1 = dataSnapshot1.child("Bengaluru");
                         String city = "Bengaluru";
                         //Toast.makeText(getApplicationContext(), d1.toString(), Toast.LENGTH_LONG).show();
                         Iterable<DataSnapshot> iterable1 = d1.getChildren();
                         for(DataSnapshot d2 : iterable1){
-                            Toast.makeText(getApplicationContext(), d2.toString(), Toast.LENGTH_LONG).show();
+                            //Toast.makeText(getApplicationContext(), d2.toString(), Toast.LENGTH_LONG).show();
                             String equip_no = d2.getKey();
                             String price = (String) d2.child("PricePerDay").getValue();
                             String isAllocated = (String) d2.child("isallocated").getValue();
                             String type = (String) d2.child("Type").getValue();
 
 //                            Toast.makeText(getApplicationContext(), equip_no+"-"+price+"-"+type, Toast.LENGTH_LONG).show();
-                            boolean isAlloc = (isAllocated.equals("true"))?true:false;
+                            boolean isAlloc = (isAllocated.equals("YES"))?true:false;
                             int p = Integer.parseInt(price);
 
                             Inventory obj = new Inventory(equip_no, p, type, isAlloc, state, city);
 
-                            requestList.add(obj);
+                            if(isAlloc==true){}
+                            else{
+                                requestList.add(obj);
+                            }
+
                             //Toast.makeText(getApplicationContext(), equip_no+"-"+p+"-"+type+"-"+isAlloc, Toast.LENGTH_LONG).show();
 
                         }

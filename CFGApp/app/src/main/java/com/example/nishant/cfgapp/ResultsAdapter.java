@@ -1,12 +1,14 @@
 package com.example.nishant.cfgapp;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -23,6 +25,7 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.MyViewHo
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView statename, statename1, cname, cname1, type_veh, type_veh1, price, price1, eid, eid1, isavail, isavail1;
         public CardView cardView;
+        public FloatingActionButton floatingActionButton;
 
         public MyViewHolder(View view) {
             super(view);
@@ -40,16 +43,23 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.MyViewHo
             eid1 = view.findViewById(R.id.equipid1);
             isavail = view.findViewById(R.id.orderExpiry);
             isavail1 = view.findViewById(R.id.greaterDistance);
+            floatingActionButton = view.findViewById(R.id.hint_available);
 
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
+                    Inventory request = moviesList.get(getAdapterPosition());
 
-//                    Intent intent = new Intent(v.getContext(), OrderActivity.class);
-//                    Inventory request = moviesList.get(getAdapterPosition());
-//                    Serializable s = (Serializable) request;
-//                    intent.putExtra("requestObj",s);
-//                    v.getContext().startActivity(intent);
+                    if(request.isAllocated()){
+                        Toast.makeText(v.getContext(), "Sorry, The Item is already Booked!", Toast.LENGTH_LONG).show();
+                        floatingActionButton.setVisibility(View.GONE);
+                    } else {
+                        Intent intent = new Intent(v.getContext(), OrderActivity.class);
+
+                        Serializable s = (Serializable) request;
+                        intent.putExtra("requestObj",s);
+                        v.getContext().startActivity(intent);
+                    }
                 }
             });
 
@@ -83,6 +93,10 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.MyViewHo
             holder.isavail1.setText("True");
         } else {
             holder.isavail1.setText("False");
+        }
+
+        if(request.isAllocated()){
+            holder.floatingActionButton.setVisibility(View.GONE);
         }
 
         holder.cname1.setText(request.getCentername());

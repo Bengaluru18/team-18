@@ -1,6 +1,8 @@
 package com.example.nishant.cfgapp;
 
-public class Inventory {
+import java.io.Serializable;
+
+public class Inventory implements Serializable{
     private String equip_no;
     private int price;
     private String type;
